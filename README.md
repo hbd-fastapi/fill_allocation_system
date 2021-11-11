@@ -3,16 +3,19 @@
 > Live demo [_here_](https://www.example.com). <!-- If you have the project hosted somewhere, include the link here. -->
 
 ## Table of Contents
-* [General Info](#general-information)
-* [Technologies Used](#technologies-used)
-* [Features](#features)
-* [Screenshots](#screenshots)
-* [Setup](#setup)
-* [Usage](#usage)
-* [Project Status](#project-status)
-* [Room for Improvement](#room-for-improvement)
-* [Acknowledgements](#acknowledgements)
-* [Contact](#contact)
+- [FILL ALLOCATION SYSEM](#fill-allocation-sysem)
+  - [Table of Contents](#table-of-contents)
+  - [Initial requirements](#initial-requirements)
+  - [General Information](#general-information)
+  - [Technologies Used](#technologies-used)
+  - [Features](#features)
+  - [Screenshots](#screenshots)
+  - [Setup](#setup)
+  - [Usage](#usage)
+  - [Project Status](#project-status)
+  - [Room for Improvement](#room-for-improvement)
+  - [Acknowledgements](#acknowledgements)
+  - [Contact](#contact)
 <!-- * [License](#license) -->
 
 
@@ -35,13 +38,12 @@
 
 
 ## Technologies Used
-- Tech 1 - version 1.0
-- Tech 2 - version 2.0
-- Tech 3 - version 3.0
+- Docker - version 3.8
+- Python - version 3.8.10
+- fastapi - version 0.70.0
 
 
 ## Features
-List the ready features here:
 - Awesome feature 1
 - Awesome feature 2
 - Awesome feature 3
@@ -53,6 +55,16 @@ List the ready features here:
 
 
 ## Setup
+To create a network:
+`
+docker network create backend
+`
+
+To compose application:
+`
+docker-compose up --build
+`
+
 What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
 
 Proceed to describe how to install / setup one's local environment / get started with the project.
