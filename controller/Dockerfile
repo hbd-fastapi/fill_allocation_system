@@ -1,5 +1,10 @@
 FROM python:3.9-slim-buster
-ENV WORKDIR='/code'
+
+ENV WORKDIR='/app'
+
+ENV PYTHONDONTWRITEBYTECODE 1
+
+ENV PYTHONUNBUFFERED 1
 
 RUN apt-get update \
     && apt-get install --no-install-recommends -y \
@@ -7,10 +12,8 @@ RUN apt-get update \
         build-essential \
     && apt-get clean
 
-COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
+COPY requirements.txt /app/requirements.txt
 
-EXPOSE 8001
+RUN pip install -r /app/requirements.txt
 
-COPY . .
-CMD ["python", "-u", "server.py"]
+COPY . /app/
