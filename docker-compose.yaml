@@ -3,39 +3,40 @@ version: "3.8"
 services:
   controller:
     build: ./controller
-    restart: always
+    command: uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+    volumes:
+    - ./controller/:/app/   
     ports:
-      - "8001:8001"
-    networks:
-      - backend
+      - "8004:8000"
+    restart: always
 
-  # position:
-  #   build: ./position
-  #   image: position:latest
-  #   restart: always
-  #   ports:
-  #     - "8002:8002"
-  #   networks:
-  #     - backend
+  position:
+    build: ./position
+    command: uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+    volumes:
+    - ./position/:/app/
+    ports:
+      - "8003:8000"
+    restart: always
 
   aum:
     build: ./aum
+    command: uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+    volumes:
+    - ./aum/:/app/
     depends_on:
       - controller
-    image: aum:latest
+    ports:
+      - 8002:8000
     restart: always
-    networks:
-      - backend
 
-  # fill:
-  #   build: ./fill
-  #   depends_on:
-  #     - controller    
-  #   image: fill:latest
-  #   restart: always
-  #   networks:
-  #     - backend
-
-networks:
-  backend:
-    external: true
+  fill:
+    build: ./fill
+    command: uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+    volumes:
+    - ./fill/:/app/
+    depends_on:
+      - controller    
+    ports:
+      - 8001:8000
+    restart: always
