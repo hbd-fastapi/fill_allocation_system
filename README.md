@@ -1,5 +1,5 @@
 # FILL ALLOCATION SYSTEM
-> This is fill allocations system based on microservices written and fastapi and dockerized. The idea is to spread incoming fills accoridingly to given percentages.
+> This is fill allocation system based on microservices written in python using fastapi and docker. The idea is to spread incoming fills accoridingly to given percentages.
 
 ## Table of Contents
 - [FILL ALLOCATION SYSTEM](#fill-allocation-system)
